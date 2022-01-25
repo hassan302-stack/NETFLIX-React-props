@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useState } from 'react';
+import './index.css'
+import sdata from './sdata'
+const App = (props) => {
+  const [state, setstate] = useState(sdata)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      {
+
+
+        <div className="card-container">
+          <div className="card">
+            <img src={props.img} alt="Not found" />
+            <div className="card-info">
+              <h3 className="title">{props.title}</h3>
+              <span className="category">{props.category}</span>
+              <a href={props.link}>
+                <button>Watch Now</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      }
+
+
+    </>
   );
 }
 
